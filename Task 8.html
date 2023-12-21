@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess The Number</title>
+
+</head>
+<body>
+
+<button onclick="Play()">Chơi</button>
+
+<script>
+    function Play() {
+        let range = prompt("Enter the range number you want to guess");
+
+        let rangeguess = range.split("-");
+        let min = parseInt(rangeguess[0]);
+        let max = parseInt(rangeguess[1]);
+
+        let rand = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let result = false;
+        let attempts = 0;
+
+        while (!result && attempts < 3) {
+            let guess = prompt("Enter your guess number in the range number " + range + " (Attempts: " + (attempts + 1) + ")");
+
+
+            if (guess === null) {
+                alert("GG!! You canceled the game");
+                return;
+            }
+
+            guess = parseInt(guess);
+
+            if (!isNaN(guess)) {
+                if (guess === rand) {
+                    alert("Congratulation!!! Your guess number is correct");
+                    result = true;
+                } else if (guess > rand) {
+                    alert("Your guess number is higher, try again");
+                } else {
+                    alert("Your guess number is lower, try again");
+                }
+                attempts++;
+            } else {
+                alert("Please enter a valid number");
+            }
+        }
+
+        if (!result && attempts === 3) {
+            alert("GG!! You lose");
+        }
+    }
+</script>
+
+</body>
+</html>

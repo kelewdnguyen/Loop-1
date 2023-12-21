@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function calc() {
+        let a = 0;
+        let b = 1;
+
+        while (true) {
+            let temp = a + b;
+            a = b;
+            b = temp;
+
+            if (temp % 5 === 0) {
+                return temp;
+            }
+        }
+    }
+
+    let fibonacciNum = calc();
+    console.log("So fibonacci dau tien chia het cho 5 la: " + fibonacciNum);
+</script>
+
+</body>
+</html>

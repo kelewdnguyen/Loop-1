@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    let temp;
+
+    for (;;) {
+        temp = prompt("Enter temperature:");
+
+
+        temp = parseInt(temp);
+
+        if (temp > 100) {
+            alert("Decrease temperatur");
+        } else if (temp < 20) {
+            alert("Increase temperature");
+        } else {
+            alert("Suitable temperature");
+            break;
+        }
+    }
+
+</script>
